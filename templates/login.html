@@ -1,0 +1,18 @@
+<div class="main-container w-100 h-100 d-flex justify-content-center flex-column gap-5 " >
+    <div class="login-form">
+      <form class="p-5" ng-submit="main.login(email,password)">
+        <div class="logo">
+          <h2 class="heading text-primary mb-4" style="font-size: 2.6rem;"><i class="fa-solid fa-graduation-cap"></i> Campus Care</h>
+        </div>
+        <h1 class="heading mb-5">Welcome Back!</h1>
+        <div class=" mb-3">
+            <input type="email" class="form-control" id="email" ng-model="email" placeholder="Enter email">
+          </div>
+          <div class="d-flex align-items-center mb-4 col-sm-6 col-12 ">
+            <input type="password" class="form-control" ng-model="password" name="password" id="pass2" placeholder="Password" required>
+            <span style="width: 0;"  onclick="visible('pass2','passIcon2')" type="button"><i class="fa-regular text-secondary fa-eye" id="passIcon2" style="position: relative; right: 2.5rem; z-index: 55;"></i></span>                               
+          </div>
+          <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    </div>
+</div>
