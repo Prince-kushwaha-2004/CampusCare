@@ -1,0 +1,55 @@
+<div class="mainContainer d-flex">
+    <nav class="sideBar resnav d-flex flex-column gap-3 justify-content-between border">
+        <div>
+            <div class="logo  d-flex align-item-center justify-content-between">
+                <h2 class="heading m-auto "><i class="fa-solid fa-graduation-cap"></i> Campus Care </h2>
+                <i class="fa-solid fs-3 m-auto bars fa-chevron-left" type="button" onclick="hidenav()"></i>
+            </div>
+            <div>
+                <div ng-repeat="x in home.nav">
+                    <a class="d-flex justify-content-between" type="button" ng-click="home.toggleNav(x.id)"
+                        ng-show="x.child.length"> <span><i class="bi {{x.icon}}"></i>&nbsp;&nbsp; {{x.title}}</span> <i
+                            class="bi bi-chevron-down"></i></a>
+                    <div class="d-flex childNav d-none flex-column" id="{{x.id}}" ng-show="x.child.length">
+                        <a ui-sref-active="active" ng-repeat="y in x.child" style="padding-left: 4.2rem ;"
+                            ui-sref="{{y.state}}"><i class="bi {{y.icon}}"></i>&nbsp;&nbsp; {{y.title}}</a>
+                    </div>
+                    <div class="w-100 " ng-hide="x.child.length">
+                        <a class="d-flex justify-content-between" ui-sref-active="active" ui-sref="{{x.state}}"><span><i
+                                    class="bi {{x.icon}}"></i>&nbsp;&nbsp; {{x.title}}</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="textBlack logoutdiv d-flex flex-column">
+            
+            <div class="d-flex gap-3 a justify-content-center" ng-click="main.logout()" role="button" ><i class="bi bi-box-arrow-in-left fs-3 fw-bold"></i><p class="mt-auto mb-auto">Logout</p></div>
+        </div>
+        
+    </nav>
+    <div>
+        <i class="fa-solid fw-bold fs-3 m-4 fa-chevron-right none position-fixed" id="hide" onclick="hidenav()"></i>
+    </div>
+    <div class="body-container overflow-auto" ui-view="page">
+    </div>
+    <div class="d-none d-xl-flex flex-column text-center gap-3 p-4 rightbar border">
+        <div class="profile" style="width: 20rem;">
+            <!-- <img src="{{main.imgurl}}/{{home.profileData.image}}" class="rounded-circle"
+                style="width: 8rem; height: 8rem;" alt="profile"> -->
+            <!-- <h2 class="p-2">{{home.profileData.name.toUpperCase()}}</h2> -->
+            <!-- <p>{{home.profileData.email}}</p> -->
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="rounded-circle"
+            style="width: 8rem; height: 8rem;" alt="profile">
+            <h2 class="p-2">{{'prince kushwaha'.toUpperCase()}}</h2>
+            <p>prince121kk@kiet.edu</p>
+            <select class="form-select align-self-center form-select-solid w-50 m-1 fs-6" style="background-color: var(--white-bg-1); color: var(--test-black);" id="Qualification" ng-click="home.changeRole('Qualification')" name="qualification" required>
+                <option selected>Dean SW</option>
+                <option  >Faculity</option>
+            </select>
+        </div>
+      
+        <hr>
+        <p class="fs-4 textBlack">Activity</p>
+        
+    </div>
+</div>

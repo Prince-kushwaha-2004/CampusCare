@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --white: #ffffff;
+    --white-bg-1:rgb(247, 251, 252);
+    --white-bg-2:white;
+    --primary: #0d6efd;
+    --secondary:#9FA6B2;
+    --gray:#f1f3f3;
+    --gray-dark:#464646;
+    --background:#ebecff;
+    --test-black:black;
+}
+
+.dark{
+    --white-bg-1:rgb(27, 27, 27);
+    --white-bg-2:rgb(44, 44, 44);
+     --white: #161616;
+    --primary: #0d6efd;
+    --secondary:#9FA6B2;
+    --gray:#252525;
+    --gray-dark:#e2ddddce;
+    --background:#ebecff;
+    --test-black:rgb(255, 255, 255);
+
+}
+
+.textBlack{
+    color: var(--test-black);
+}
+.textSecondaryBlack{
+    color: var(--gray-dark);
+}
+.bgGray{
+    background-color: var(--gray);
+}
+main{
+    background: #E0EAFC;  
+    background: -webkit-linear-gradient(to left, #CFDEF3, #E0EAFC);  
+    background: linear-gradient(to left, #CFDEF3, #E0EAFC); 
+}   
+.dark main{
+    background: #232526;  
+background: -webkit-linear-gradient(to left, #414345, #232526);  
+background: linear-gradient(to left, #414345, #232526); 
+
+}
+.main-container{
+    align-items: center;
+}
+.login-form{
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+    width: 60%;
+    background-image: url(./assets/loginbg.png);
+    background-position: right 0;
+    background-size: cover;
+    padding: 3rem;
+    align-items: end;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.dark .login-form{
+    background: #232526;  
+    background: -webkit-linear-gradient(to left, #414345, #232526);  
+    background: linear-gradient(to left, #414345, #232526); 
+    
+}
+.login-form input{
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    min-width: 25vw;
+}
+.login-form button{
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: var(--primary);
+}
+.login-form h2.heading{
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+.login-form h1.heading{
+    font-size: 2.2rem;
+    font-weight: 800;
+    color:var(--gray-dark);
+}
+.logo{
+    background-color: var(--gray);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+}
+.logo h2{
+    font-size: 1.5rem;
+    font-weight:700;
+    color: var(--primary);
+}
+.login-form .logo{
+    background-color: transparent;
+}
+.mainContainer{
+    width: 100vw;
+    height: 100vh;
+
+}
+.sideBar{
+    height: 100vh;
+    min-width: 20rem;
+    width: 20rem;
+    background-color: var(--white-bg-2);   
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+.box-shadow{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+.dark div,.dark nav{
+    box-shadow: none;
+}
+.sideBar a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--gray-dark);
+    padding: .5rem 1rem;
+    padding-left: 2rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    margin-right: 1rem;
+    border-radius: 0 1rem 1rem 0;
+    border-left: 8px solid transparent;
+    animation: .5s ease-out 0s 1 slideInFromLeft;
+}
+#hide,.bars{
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+.sideBar  a:hover,
+.sideBar a:focus {
+    background-color:var(--gray);
+    border-left: 8px solid var(--primary);
+    color: var(--test-black);
+    font-weight: 600;
+}
+.logoutdiv .a{
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    animation: .5s ease-out 0s 1 slideInFromLeft;   
+}
+.dark .sideBar{
+    border: none !important;
+}
+.rightbar{
+    background-color: var(--white-bg-1);
+ 
+    width: auto;
+    
+}
+.dark .rightbar{
+    border: none !important;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color:var(--white-bg-2);
+    animation: .5s ease-out 0s 1 slideInFromRight;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.profile button{
+    background-color: var(--primary);
+    color: var(--white);
+}
+.profile h2{
+    color: var(--test-black);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+.profile p{
+    color: var(--gray-dark);
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconcontainer{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+nav{
+    z-index: 100;
+    position: relative;
+    left: 0;
+    transition: all .3s;
+}
+.hide-nav{
+    position: absolute;
+    left: -20rem;
+    width: 17.5rem;
+}
+.none{
+    display: none;
+}
+.body-container{
+    background-color: var(--white-bg-1);
+    padding: 0rem 2rem;
+    margin: 0;
+    flex: 1;
+}
+.body-container *{
+    animation: .5s ease-out 0s 1 slideInFromBottom;
+}
+.body-container::-webkit-scrollbar { 
+    display: none; 
+
+}
+.statics{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: var(--white-bg-2);
+    width: 17rem;
+    height: 9rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+#chart1,#chart2{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+.dark #chart1,.dark #chart2{
+    box-shadow: none;
+}
+.faculty{
+    border: 1px solid rgba(202, 207, 223, 0.705);
+}
+.faculty img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.charts{
+    margin-top: 5rem;
+}
+.charts div{ 
+    background-color: var(--white-bg-2);
+    border-radius: 1rem;
+  
+}
+.charts h2{
+    font-weight: 600;
+}
+.togglediv{
+    top: .7rem;
+    right: 23.5rem;
+    background-color: var(--gray);
+    padding: .5rem;
+    border-radius: 1rem;
+}
+foreignObject{
+    background-color: var(--white-bg-2) !important;
+}
+.dark form input,.dark form select,.dark form textarea{
+    background-color: var(--white-bg-2);
+    color: var(--gray-dark);
+}
+.dark form input:focus,.dark form select:focus,.dark form textarea:focus{
+    background-color: var(--white-bg-2);
+    color: var(--gray-dark);
+}
+form{
+    color: var(--gray-dark);
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translatey(30%);
+    }
+    100% {
+      transform: translatey(0);
+    }
+  }
+
+  @media(max-width:800px){
+    nav{
+        position: absolute;
+    }
+    .statics{
+        width: 10rem;
+    }
+    .statics div{
+        font-size: small !important;
+    }
+    .body-container{
+        padding: 1rem;
+    }
+    #chart1 ,#chart2{
+        width: 24rem !important;
+    }
+
+
+}
+@media(max-width:1200px){
+    .togglediv{
+        right: 1rem;
+    }
+}
+
+.dark *{
+    border: none;
+}
