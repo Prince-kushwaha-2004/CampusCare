@@ -70,6 +70,13 @@ homeCtrl=app.controller('homeCtrl',['$http','$state','api_request',function($htt
             state:"home.Grievance_history",
             child:[]
         },
+        {
+            id:"99",
+            title:"Pending Greviances",
+            icon:"bi-hourglass-bottom",
+            state:"home.pending_greviances",
+            child:[]
+        },
     ]
   
  

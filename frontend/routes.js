@@ -116,7 +116,18 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
             }
         }
     }
+    var pending_greviances = {
+        name: 'home.pending_greviances',
+        url: 'pending_greviances',
+        views: {
+            'page': {
+                templateUrl: 'templates/student/pending_greviances.html',
+                controller: 'studentCtrl as student'
+            }
+        }
+    }
     $stateProvider.state(student_dashboard)
     $stateProvider.state(Grievance)
     $stateProvider.state(Grievance_history)
+    $stateProvider.state(pending_greviances)
 }]);

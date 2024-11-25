@@ -13,8 +13,8 @@
 }
 
 .dark{
-    --white-bg-1:rgb(27, 27, 27);
-    --white-bg-2:rgb(44, 44, 44);
+    --white-bg-1:rgb(19, 18, 18);
+    --white-bg-2:rgb(32, 31, 31);
      --white: #161616;
     --primary: #0d6efd;
     --secondary:#9FA6B2;
@@ -40,9 +40,8 @@ main{
     background: linear-gradient(to left, #CFDEF3, #E0EAFC); 
 }   
 .dark main{
-    background: #232526;  
-background: -webkit-linear-gradient(to left, #414345, #232526);  
-background: linear-gradient(to left, #414345, #232526); 
+    background: #111111;  
+
 
 }
 .main-container{
@@ -63,11 +62,12 @@ background: linear-gradient(to left, #414345, #232526);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 .dark .login-form{
-    background: #232526;  
-    background: -webkit-linear-gradient(to left, #414345, #232526);  
-    background: linear-gradient(to left, #414345, #232526); 
+    background-image: url(./assets/logindark2.png);
+    background-position: right 0;
+    background-size: cover;
     
 }
+
 .login-form input{
     font-size: 1.5rem;
     padding: .5rem 1rem;
@@ -157,7 +157,6 @@ background: linear-gradient(to left, #414345, #232526);
 }
 .rightbar{
     background-color: var(--white-bg-1);
- 
     width: auto;
     
 }
@@ -221,9 +220,21 @@ nav{
     margin: 0;
     flex: 1;
 }
-.body-container *{
+/* .body-container *{
     animation: .5s ease-out 0s 1 slideInFromBottom;
-}
+} */
+ .animateUp{
+    animation: .5s ease-out 0s 1 slideInFromBottom;
+ }
+ .animateLeft{
+    animation: .5s ease-out 0s 1 slideInFromLeft;
+ }
+ .animateRight{
+    animation: .5s ease-out 0s 1 slideInFromRight;
+ }
+ .animateZoom{
+    animation: .5s ease-out 0s 1 zoom;
+ }
 .body-container::-webkit-scrollbar { 
     display: none; 
 
@@ -301,10 +312,22 @@ form{
   }
   @keyframes slideInFromBottom {
     0% {
+    opacity: 0;
       transform: translatey(30%);
     }
     100% {
+        opacity: 1;
       transform: translatey(0);
+    }
+  }
+  @keyframes zoom{
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -322,7 +345,20 @@ form{
         padding: 1rem;
     }
     #chart1 ,#chart2{
-        width: 24rem !important;
+        width: 22rem !important;
+    }
+    .login-form{
+        width: 100vw;
+        height: 100vh;
+        padding: 0rem !important;
+        margin: 0rem !important;
+    }
+    .login-form .logo{
+     margin: 0 !important;
+     padding: 0 !important;
+    }
+    .login-form .logo h2{
+        font-size: 2rem !important;
     }
 
 
@@ -336,3 +372,81 @@ form{
 .dark *{
     border: none;
 }
+
+.stepper-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+  
+  
+  .stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+  }
+  
+  .stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+  }
+  
+  .stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+  }
+  
+  .stepper-item.active {
+    font-weight: bold;
+  }
+  
+  .stepper-item.completed .step-counter {
+    background-color: #4bb543;
+  }
+  
+  .stepper-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #4bb543;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+  }
+  
+  .stepper-item:first-child::before {
+    content: none;
+  }
+  .stepper-item:last-child::after {
+    content: none;
+  }
