@@ -1,4 +1,4 @@
-const baseurl="https://127.0.0.1:8000/CampusCare"
+const baseurl="https://192.168.42.184:8888/CampusCare"
 const app=angular.module('myApp',['ui.router'])
 
 let theme=localStorage.getItem('theme')
@@ -105,6 +105,10 @@ function visible(id,pass){
 hidenav=function(){
     document.querySelector('.resnav').classList.toggle('hide-nav')
     document.querySelector('#hide').classList.toggle('none')
+}
+dnone=function(id){
+    d=document.getElementById(id)
+    d.classList.toggle('d-none')
 }
 
 changetheme=function(){

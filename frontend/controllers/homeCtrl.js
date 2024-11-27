@@ -5,6 +5,15 @@ homeCtrl=app.controller('homeCtrl',['$http','$state','api_request',function($htt
         nav=document.getElementById(id)
         nav.classList.toggle('d-none')
     }
+      //sidebar
+    //   api_request.http_request('GET','navbar/','','','application/json',(data)=>{
+    //     home.nav=data.data
+    // })
+    //roles
+    api_request.http_request('GET','list_roles/','','','application/json',(data)=>{
+        home.nav=data.data
+    })
+
     api_request.http_request('GET','profile/',"","",undefined,(data)=>{
        home.profileData=data.data[0]
     })
@@ -75,6 +84,13 @@ homeCtrl=app.controller('homeCtrl',['$http','$state','api_request',function($htt
             title:"Pending Greviances",
             icon:"bi-hourglass-bottom",
             state:"home.pending_greviances",
+            child:[]
+        },
+        {
+            id:"89",
+            title:"Profile",
+            icon:"bi-person-fill",
+            state:"home.profile",
             child:[]
         },
     ]

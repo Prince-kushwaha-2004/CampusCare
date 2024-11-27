@@ -5,6 +5,7 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
     passvalid = /^(?=.*[A-Z])(?=.*[!@#$&])(?=.*[0-9])(?=.*[a-z]).{8,16}$/i;
     addressvalid =/^[*A-Za-z0-9]{2}(?=.*[a-z])[*A-Za-z\.\- 0-9]{1,}$/i;
 
+  
     api_request.http_request('GET','list_items/',{type:"hostel"},'','application/json',(data)=>{
         admin.hostels=data.data
     })

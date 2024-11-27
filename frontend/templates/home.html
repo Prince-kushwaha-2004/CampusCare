@@ -31,17 +31,14 @@
         <i class="fa-solid fw-bold fs-3 m-4 fa-chevron-right none position-fixed" id="hide" onclick="hidenav()"></i>
     </div>
     <div class="body-container overflow-auto" ui-view="page">
+        <h1 style="color: var(--test-black);">Faculty Dashboard</h1>
     </div>
     <div class="d-none d-xl-flex flex-column text-center gap-3 p-4 rightbar border">
         <div class="profile" style="width: 20rem;">
-            <!-- <img src="{{main.imgurl}}/{{home.profileData.image}}" class="rounded-circle"
-                style="width: 8rem; height: 8rem;" alt="profile"> -->
-            <!-- <h2 class="p-2">{{home.profileData.name.toUpperCase()}}</h2> -->
-            <!-- <p>{{home.profileData.email}}</p> -->
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="rounded-circle"
-            style="width: 8rem; height: 8rem;" alt="profile">
-            <h2 class="p-2">{{'prince kushwaha'.toUpperCase()}}</h2>
-            <p>prince121kk@kiet.edu</p>
+             <img src="{{main.imgurl}}/{{home.profileData.image}}" class="rounded-circle"
+                style="width: 8rem; height: 8rem;" alt="profile">
+            <h2 class="p-2">{{home.profileData.name.toUpperCase()}}</h2>
+             <p>{{home.profileData.email}}</p> 
             <select class="form-select align-self-center form-select-solid w-50 m-1 fs-6" style="background-color: var(--white-bg-1); color: var(--test-black);" id="Qualification" ng-click="home.changeRole('Qualification')" name="qualification" required>
                 <option selected>Dean SW</option>
                 <option  >Faculity</option>

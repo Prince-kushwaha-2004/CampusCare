@@ -126,8 +126,54 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
             }
         }
     }
+    var profile = {
+        name: 'home.profile',
+        url: 'profile',
+        views: {
+            'page': {
+                templateUrl: 'templates/home/profile.html',
+                controller: 'homeCtrl as home'
+            }
+        }
+    }
+    var all_grevances = {
+        name: 'home.all_grevances',
+        url: 'all_grevances',
+        views: {
+            'page': {
+                templateUrl: 'templates/home/allGrevance.html',
+                controller: 'homeCtrl as home'
+            }
+        }
+    }
     $stateProvider.state(student_dashboard)
     $stateProvider.state(Grievance)
     $stateProvider.state(Grievance_history)
     $stateProvider.state(pending_greviances)
+    $stateProvider.state(profile)
+    $stateProvider.state(all_grevances)
+
+    //warden
+    var warden_dashboard = {
+        name: 'home.warden_dashboard',
+        url: 'warden_dashboard',
+        views: {
+            'page': {
+                templateUrl: 'templates/warden/dashboard.html',
+                controller: 'wardenCtrl as warden'
+            }
+        }
+    }
+    var warden_grevance = {
+        name: 'home.warden_grevance',
+        url: 'warden/grevance',
+        views: {
+            'page': {
+                templateUrl: 'templates/warden/Grevances.html',
+                controller: 'wardenCtrl as warden'
+            }
+        }
+    }
+    $stateProvider.state(warden_dashboard)
+    $stateProvider.state(warden_grevance)
 }]);
