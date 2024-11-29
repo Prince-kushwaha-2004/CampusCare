@@ -1,6 +1,6 @@
 <h1 class="textBlack text-center animateZoom p-4">Grievance</h1>
 
-<form class="d-flex flex-column justify-content-center align-items-center animateUp" name="grevance_form" ng-submit="">
+<form class="d-flex flex-column justify-content-center align-items-center animateUp" name="grievance_form" ng-submit="student.addGrievance()">
     <div>
         <label class="form-label text-white m-1" for="usr_img1">
             <div class="d-flex justify-content-center mb-2">
@@ -12,22 +12,22 @@
         </label>
         <div class="d-flex justify-content-center">
             <div class="btn  btn-sm">
-                <input type="file" multiple name="profile_image" accept="image/png, image/gif, image/jpeg"
-                    class="form-control d-none" id="usr_img1" onchange="displaySelectedImage(event, 'student_img')" />
+                <input type="file" name="image" accept="image/png, image/gif, image/jpeg"
+                    class="form-control d-none" id="usr_img1" onchange="displaySelectedImage(event, 'student_img')"/>
             </div>
         </div>
     </div>
     <div class="col-10 col-lg-6 p-2 ps-3 m-1">
-        <input type="text" class="form-control fs-4" id="title"  placeholder="Title">
+        <input type="text" class="form-control fs-4" name="title" required  placeholder="Title">
     </div>
     <div class="col-10 col-lg-6 p-2 ps-3 m-1">
-        <select class="form-select align-self-center form-select-solid fs-4" id="Qualification"  name="qualification" required>
+        <select class="form-select align-self-center form-select-solid fs-4" id="category"  name="category" required>
             <option selected disabled>Category</option>
-            <option >Faculity</option>
+            <option ng-repeat="x in student.category" value="{{x.id}}">{{x.value}}</option>
         </select>
     </div>
     <div class="col-10 col-lg-6 p-2 ps-3 m-1">
-        <textarea class="form-control fs-4" id="description" placeholder="Description" rows="3"></textarea>
+        <textarea class="form-control fs-4" required name="description" placeholder="Description" rows="3"></textarea>
     </div>
     <div class="form-floating col-10 col-lg-6 p-2 ps-3 m-1">
         <button class="btn btn-primary btn-lg col-12" type="submit">Submit</button>

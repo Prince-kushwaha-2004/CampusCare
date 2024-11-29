@@ -305,6 +305,10 @@ foreignObject{
 form{
     color: var(--gray-dark);
 }
+.pagination li a{
+    background-color: var(--white-bg-2);
+    color: var(--gray-dark);
+}
 @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);
@@ -453,13 +457,13 @@ form{
   }
   
   .stepper-item.completed .step-counter {
-    background-color: #4bb543;
+    background-color: var(--primary)
   }
   
   .stepper-item.completed::after {
     position: absolute;
     content: "";
-    border-bottom: 2px solid #4bb543;
+    border-bottom: 2px solid var(--primary);
     width: 100%;
     top: 20px;
     left: 50%;

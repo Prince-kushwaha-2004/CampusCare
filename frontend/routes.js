@@ -33,7 +33,6 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
             }
         }
     }
-
     var studentRegister = {
         name: 'home.studentRegister',
         url: 'studentRegister',
@@ -44,7 +43,6 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
             }
         }
     }
-
     var facultyRegister = {
         name: 'home.facultyRegister',
         url: 'facultyRegister',
@@ -55,7 +53,6 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
             }
         }
     }
-
 
     $stateProvider.state(studentRegister)
     $stateProvider.state(facultyRegister)
@@ -117,7 +114,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
         }
     }
     var pending_greviances = {
-        name: 'home.pending_greviances',
+        name: 'home.pending_grievances',
         url: 'pending_greviances',
         views: {
             'page': {
@@ -137,7 +134,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
         }
     }
     var all_grevances = {
-        name: 'home.all_grevances',
+        name: 'home.all_grievances',
         url: 'all_grevances',
         views: {
             'page': {
@@ -152,7 +149,6 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
     $stateProvider.state(pending_greviances)
     $stateProvider.state(profile)
     $stateProvider.state(all_grevances)
-
     //warden
     var warden_dashboard = {
         name: 'home.warden_dashboard',
@@ -165,7 +161,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
         }
     }
     var warden_grevance = {
-        name: 'home.warden_grevance',
+        name: 'home.warden_grievance',
         url: 'warden/grevance',
         views: {
             'page': {

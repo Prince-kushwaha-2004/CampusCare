@@ -19,17 +19,16 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-
 <body >
     <div style="z-index: 5000; " id="preloader">
         <div id="loader"></div>
     </div>
-    <li class="nav-item align-items-center textBlack m-2 fs-3 d-flex align-self-center position-absolute togglediv animateZoom">
-        <i class="fas fa-moon" id="toggle"  onclick="changetheme()"></i>
+    <li class="nav-item align-items-center textBlack m-2 fs-3 d-flex align-self-center position-absolute togglediv animateZoom" type="button">
+        <i class="fas fa-moon" id="toggle"  onclick="main.changetheme()"></i>
     </li>
     <main ng-app="myApp" ng-controller="mainCtrl as main"
         style="width: 100vw; height: 100vh;">
-        <div ng-show='main.alert.show' class="custorm_allert w-100 d-flex justify-content-center" >
+        <div ng-show='main.alert.show' class="custorm_allert w-100 d-flex justify-content-center animateUp" >
             <div class="alert alert-{{main.alert.status}} alert-dismissible fade show position-absolute mt-1" role="alert" style="z-index: 200;">
               <strong>{{main.alert.title}}!  </strong>{{main.alert.text}}
               <button type="button" ng-click="main.hide_alert()" class="btn-close" aria-label="Close"></button>

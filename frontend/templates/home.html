@@ -22,7 +22,9 @@
             </div>
         </div>
         <div class="textBlack logoutdiv d-flex flex-column">
-            
+            <select class="form-select align-self-center d-block d-xl-none form-select-solid w-50 m-1 fs-6" ng-hide="home.roles[0].role=='Student'" style="background-color: var(--white-bg-1); color: var(--test-black);" id="Qualification" ng-click="home.changeRole('Qualification')" name="qualification" required>
+                <option ng-repeat="x in home.roles" ng-disabled="x.active" ng-selected="x.active" value="{{x.id}}">{{x.role}}</option>
+            </select>
             <div class="d-flex gap-3 a justify-content-center" ng-click="main.logout()" role="button" ><i class="bi bi-box-arrow-in-left fs-3 fw-bold"></i><p class="mt-auto mb-auto">Logout</p></div>
         </div>
         
@@ -31,7 +33,19 @@
         <i class="fa-solid fw-bold fs-3 m-4 fa-chevron-right none position-fixed" id="hide" onclick="hidenav()"></i>
     </div>
     <div class="body-container overflow-auto" ui-view="page">
-        <h1 style="color: var(--test-black);">Faculty Dashboard</h1>
+        <div class="header p-5 d-flex justify-content-between animateUp">
+            <div>
+                
+                <h1 class="fw-bold textBlack">Hello, {{home.profileData.name.charAt(0).toUpperCase() + home.profileData.name.slice(1)}}</h1>
+                <p class="fs-4 textSecondaryBlack">Welcome to CampusCare!!</p>
+            </div>
+            <div class="date flex-center gap-3 d-none d-md-flex">
+                <p class="fs-4 textBlack mb-0 pb-0 ">16 May, 2024</p>
+                <div class="bgGray iconcontainer">
+                    <i class="bi textBlack bi-calendar2-week fs-3"></i>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="d-none d-xl-flex flex-column text-center gap-3 p-4 rightbar border">
         <div class="profile" style="width: 20rem;">
@@ -39,9 +53,8 @@
                 style="width: 8rem; height: 8rem;" alt="profile">
             <h2 class="p-2">{{home.profileData.name.toUpperCase()}}</h2>
              <p>{{home.profileData.email}}</p> 
-            <select class="form-select align-self-center form-select-solid w-50 m-1 fs-6" style="background-color: var(--white-bg-1); color: var(--test-black);" id="Qualification" ng-click="home.changeRole('Qualification')" name="qualification" required>
-                <option selected>Dean SW</option>
-                <option  >Faculity</option>
+            <select class="form-select align-self-center form-select-solid w-50 m-1 fs-6"  ng-hide="home.roles[0].role=='Student'"  style="background-color: var(--white-bg-1); color: var(--test-black);" id="Qualification" ng-click="home.changeRole('Qualification')" name="qualification" required>
+                <option ng-repeat="x in home.roles" ng-disabled="x.active" ng-selected="x.active" value="{{x.id}}">{{x.role}}</option>
             </select>
         </div>
       

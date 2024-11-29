@@ -6,16 +6,16 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
     addressvalid =/^[*A-Za-z0-9]{2}(?=.*[a-z])[*A-Za-z\.\- 0-9]{1,}$/i;
 
   
-    api_request.http_request('GET','list_items/',{type:"hostel"},'','application/json',(data)=>{
+    api_request.http_request('GET','list_items/',{type:32},'','application/json',(data)=>{
         admin.hostels=data.data
     })
-    api_request.http_request('GET','list_items/',{type:"gender"},'','application/json',(data)=>{
+    api_request.http_request('GET','list_items/',{type:31},'','application/json',(data)=>{
         admin.genders=data.data
     })
-    api_request.http_request('GET','list_items/',{type:'dept'},'','application/json',(data)=>{
+    api_request.http_request('GET','list_items/',{type:34},'','application/json',(data)=>{
         admin.department=data.data
     })
-    api_request.http_request('GET','list_items/',{type:'qualification'},'','application/json',(data)=>{
+    api_request.http_request('GET','list_items/',{type:35},'','application/json',(data)=>{
         admin.qualifications=data.data
     })
 
@@ -106,13 +106,16 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
           },
         },
         theme:{
-          mode:theme,
+          mode:main.theme,
         },
     
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart1"), options);
-        chart.render();
+  
+        if(document.querySelector("#chart1")){
+          var chart = new ApexCharts(document.querySelector("#chart1"), options);
+          chart.render();
+        }
 
         var options = {
             series: [44, 55, 41, 17, 15],
@@ -120,7 +123,7 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
             type: 'donut',
           },
           theme:{
-            mode:theme,
+            mode:main.theme,
           },
         
           responsive: [{
@@ -135,7 +138,8 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
             }
           }]
           };
-  
-          var chart = new ApexCharts(document.querySelector("#chart2"), options);
-          chart.render();
+          if(document.querySelector("#chart2")){
+            var chart = new ApexCharts(document.querySelector("#chart2"), options);
+            chart.render();
+          }
 }])

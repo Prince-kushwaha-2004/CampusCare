@@ -1,5 +1,31 @@
 deanCtrl=app.controller('deanCtrl',['api_request',function(api_request){
     console.log('deanCtrl')
     dean=this
-    
+    api_request.http_request('GET','list_faculty/','','','application/json',(data)=>{
+        dean.faculity_data=data.list
+    })
+    api_request.http_request('GET','list_items/',{"type":33},'','application/json',(data)=>{
+        dean.roles=data.data
+        console.log(data.data)
+    })
+    dean.changeRole=function(fid,id){
+        d=document.getElementById(id)
+        console.log(fid,d.value)
+        api_request.http_request('POST','assign_roles/','',{"user_id":fid,"role":d.value},'application/json',(data)=>{
+            console.log(data)
+            api_request.http_request('GET','list_faculty/','','','application/json',(data)=>{
+                dean.faculity_data=data.list
+            })
+        })
+    }
+    dean.removeRole=function(fid,rid){
+        console.log(fid,rid)
+        api_request.http_request('PATCH','assign_roles/','',{"user":fid,"role":rid},'application/json',(data)=>{
+            console.log(data)
+            api_request.http_request('GET','list_faculty/','','','application/json',(data)=>{
+                dean.faculity_data=data.list
+            })
+        })
+    }
 }])
+
