@@ -1,0 +1,11 @@
+<h1 class="textBlack text-center animateZoom p-4">Profile</h1>
+<div class="d-flex flex-column align-items-center p-4 rounded border box-shadow m-4" style="background-color: var(--white-bg-2);">
+    <img  src="{{main.imgurl}}/{{home.profileData.image}}" alt="profile" class="rounded-circle" style="width: 8rem;">
+    <div class="data mt-5 mb-5" style="color: var(--test-black); width: 80%;">
+        <div ng-repeat="(key, value) in home.profileData" ng-hide="key=='image'" class="fs-4 border p-2 d-flex justify-content-between gap-5 w-100" >
+            <h4>{{key.toUpperCase()}}</h4>
+            <h4>{{value}}</h4>
+        </div>
+    </div>
+   
+</div>
