@@ -75,6 +75,11 @@ mainCtrl = app.controller('mainCtrl', ['$state', 'api_request', '$timeout', func
         toggle.classList.add('fa-sun')
         toggle.classList.remove('fa-moon')
     }
+    main.dnone = function (id) {
+        d = document.getElementById(id)
+        d.classList.toggle('d-none')
+    }
+    
     
 }])
 
@@ -135,8 +140,3 @@ hidenav = function () {
     document.querySelector('.resnav').classList.toggle('hide-nav')
     document.querySelector('#hide').classList.toggle('none')
 }
-dnone = function (id) {
-    d = document.getElementById(id)
-    d.classList.toggle('d-none')
-}
-

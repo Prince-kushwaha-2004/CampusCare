@@ -10,6 +10,7 @@
     --gray-dark:#464646;
     --background:#ebecff;
     --test-black:black;
+    --transparent:rgba(139, 180, 233, 0.267);
 }
 
 .dark{
@@ -445,11 +446,9 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    border-radius: 1rem;
     background: #ccc;
-    margin-bottom: 6px;
+    
   }
   
   .stepper-item.active {

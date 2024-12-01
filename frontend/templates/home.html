@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="textBlack logoutdiv d-flex flex-column">
-            <select class="form-select align-self-center d-block d-xl-none form-select-solid w-50 m-1 fs-6" ng-hide="home.roles[0].role=='Student'" style="background-color: var(--white-bg-1); color: var(--test-black);" id="Qualification" ng-click="home.changeRole('Qualification')" name="qualification" required>
+            <select class="form-select align-self-center d-block d-xl-none form-select-solid w-50 m-1 fs-6" ng-hide="home.roles[0].role=='Student'" style="background-color: var(--white-bg-1); color: var(--test-black);" id="Qualification1" ng-click="home.changeRole('Qualification1')" name="qualification" required>
                 <option ng-repeat="x in home.roles" ng-disabled="x.active" ng-selected="x.active" value="{{x.id}}">{{x.role}}</option>
             </select>
             <div class="d-flex gap-3 a justify-content-center" ng-click="main.logout()" role="button" ><i class="bi bi-box-arrow-in-left fs-3 fw-bold"></i><p class="mt-auto mb-auto">Logout</p></div>

@@ -1,5 +1,13 @@
 app.service("api_request",["$http","$state",function($http,$state){
-
+    handle_error=function(status){
+        if(status==401){
+            $state.go('login')
+        }else if(status==403){
+            window.history.back();
+        }else{
+            console.log(status)
+        }
+    }
     this.http_request=function(method,path,params,data,content_type,success){
         var req = {
             method: method,
@@ -14,13 +22,13 @@ app.service("api_request",["$http","$state",function($http,$state){
         $http(req).then(function (response) {
             success(response.data);
         }, function (err) {
-            console.log(err.data)
+            console.log(err.status)
             main.show_alert("danger", "error", err.data.error)
+            handle_error(err.status)
         });
     }
 }])
 app.factory('httpInterceptor', function ($q) {
-
     var numLoadings = 0;
     return {
         request: function (config) {

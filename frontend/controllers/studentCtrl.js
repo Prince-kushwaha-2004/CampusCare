@@ -22,6 +22,8 @@ studentCtrl=app.controller('studentCtrl',['api_request',function(api_request){
             })
 
         }
-     
     }
+    api_request.http_request('GET','list_grievance/','','','application/json',(data)=>{
+        student.pendingGrievance=data.data
+    })
 }])

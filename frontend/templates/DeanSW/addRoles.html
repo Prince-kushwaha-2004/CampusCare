@@ -12,16 +12,16 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between" style="width: 70%;">
-                <div class="d-flex gap-3 justify-content-center align-item-center">
+                <div class="d-flex flex-wrap gap-3 justify-content-center align-item-center">
                     <div class="role bg-info text-white p-2 m-auto" style="border-radius: 1.5rem;"
                         ng-repeat="y in x.role">
                         {{y.role}} <i class="bi bi-x-lg" ng-click="dean.removeRole(x.id,y.id)" role="button"></i>
                     </div>
                 </div>
-                <select class="form-select form-select-solid w-25 m-1 fs-6"  ng-click="dean.changeRole(x.id,x.email)" id={{x.email}}
-                    style="background-color: var(--white-bg-1); color: var(--test-black);" name="qualification"
+                <select class="form-select form-select-solid m-1 fs-6"  ng-click="dean.changeRole(x.id,x.email)" id={{x.email}}
+                    style="background-color: var(--white-bg-1); color: var(--test-black); width: 12rem; height: 3.5rem;" name="qualification"
                     required>
-                    <option ng-repeat="z in dean.roles" ng-disabled="{{x.active_roles.includes(z.value)}}" ng-selected="{{x.active_roles.includes(z.value)}}" value="{{z.id}}">{{z.value}}</option>
+                    <option ng-repeat="z in dean.roles" -disabled="{{x.active_roles.includes(z.value)}}" ng-selected="{{x.active_roles.includes(z.value)}}" value="{{z.id}}">{{z.value}}</option>
                 </select>
             </div>
         </div>

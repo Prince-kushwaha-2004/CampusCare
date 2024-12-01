@@ -172,4 +172,31 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $u
     }
     $stateProvider.state(warden_dashboard)
     $stateProvider.state(warden_grevance)
+
+    //rector
+    var rector_dashboard = {
+        name: 'home.rector_dashboard',
+        url: 'rector_dashboard',
+        views: {
+            'page': {
+                templateUrl: 'templates/rector/dashboard.html',
+                controller: 'rectorCtrl as rector'
+            }
+        }
+    }
+    $stateProvider.state(rector_dashboard)
+
+
+    //chief rector
+    var chiefRector_dashboard = {
+        name: 'home.chiefRector_dashboard',
+        url: 'chiefRector_dashboard',
+        views: {
+            'page': {
+                templateUrl: 'templates/ChiefRector/dashboard.html',
+                controller: 'chiefCtrl as chief'
+            }
+        }
+    }
+    $stateProvider.state(chiefRector_dashboard)
 }]);
