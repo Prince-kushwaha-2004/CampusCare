@@ -18,6 +18,15 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
     api_request.http_request('GET','list_items/',{type:35},'','application/json',(data)=>{
         admin.qualifications=data.data
     })
+    api_request.http_request('GET','profile/',"","",undefined,(data)=>{
+      admin.profileData=data.data[0]
+   })
+   api_request.http_request('GET', 'all_grievance/', '', '', 'application/json', (data) => {
+    admin.allGrieviances = data.data
+  })
+
+
+
 
 
     admin.studentRegister=function(){
@@ -81,6 +90,9 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
             }
         }
         //=====================
+        api_request.http_request('GET', 'stats/', '', '', 'application/json', (data) => {
+          admin.stats = data.data[0]
+        })
         var options = {
           series: [{
           name: 'series1',
@@ -110,8 +122,6 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
         },
     
         };
-
-  
         if(document.querySelector("#chart1")){
           var chart = new ApexCharts(document.querySelector("#chart1"), options);
           chart.render();
@@ -119,6 +129,7 @@ adminCtrl=app.controller('adminCtrl',['api_request',function(api_request){
 
         var options = {
             series: [44, 55, 41, 17, 15],
+            labels: ['carpenter', 'Mango', 'Orange', 'Watermelon','abcd'],
             chart: {
             type: 'donut',
           },

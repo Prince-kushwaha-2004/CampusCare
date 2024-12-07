@@ -1,5 +1,7 @@
 homeCtrl=app.controller('homeCtrl',['$state','api_request',function($state,api_request){
     home=this
+    date=new Date().toString()
+    home.date=date.slice(8,10)+date.slice(3,7)+date.slice(10,15)
     console.log("homeCtrl")
     home.toggleNav=function(id){
         nav=document.getElementById(id)
@@ -31,6 +33,7 @@ homeCtrl=app.controller('homeCtrl',['$state','api_request',function($state,api_r
          })
         console.log(d.value)
     }
+
     // home.nav=[
     //     {
     //         id:"1",

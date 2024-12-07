@@ -1,10 +1,11 @@
 <div class="header p-5 d-flex justify-content-between animateUp">
     <div>
+        
         <h1 class="fw-bold textBlack">Hello, {{home.profileData.name.charAt(0).toUpperCase() + home.profileData.name.slice(1)}}</h1>
         <p class="fs-4 textSecondaryBlack">Welcome to CampusCare!!</p>
     </div>
     <div class="date flex-center gap-3 d-none d-md-flex">
-        <p class="fs-4 textBlack mb-0 pb-0 ">16 May, 2024</p>
+        <p class="fs-4 textBlack mb-0 pb-0 ">{{home.date}}</p>
         <div class="bgGray iconcontainer">
             <i class="bi textBlack bi-calendar2-week fs-3"></i>
         </div>
@@ -17,8 +18,8 @@
         <div class="fs-5 d-flex gap-4 ps-2 ">
             <i class="bi bi-graph-up fs-3"></i>
              <span class="d-flex flex-column">
-                <p>Grievances in Progress</p>
-                <h2>100</h2>
+                <p>Total <br>Grievances</p>
+                <h2>{{warden.stats.total}}</h2>
             </span>
         </div>
 
@@ -28,27 +29,25 @@
             <i class="bi bi-shield-fill-check fs-3"></i>
             <span class="d-flex flex-column">
                 <p>Resolved Grievances</p>
-                <h2>52</h2>
+                <h2>{{warden.stats.closed}}</h2>
             </span>
         </div>
-
     </div>
     <div class="statics ">
         <div class="fs-5 d-flex gap-4 ps-2 "> 
             <i class="bi bi-hourglass-bottom fs-3"></i>
             <span class="d-flex flex-column">
                 <p>Pending Grievances</p>
-                <h2>22</h2>
+                <h2>{{warden.stats.pending}}</h2>
             </span> 
         </div>
-
     </div>
     <div class="statics">
         <div class="fs-5 d-flex gap-4 ps-2 ">
              <i class="bi bi-cloud-plus-fill fs-3"></i>
              <span class="d-flex flex-column">
                 <p> New <br> Grievances</p>
-                <h2>3</h2>
+                <h2>{{warden.stats.registered}}</h2>
             </span>
         </div>
 
@@ -65,5 +64,4 @@
         <h2 class=" fs-3 ps-3 mb-3" style="color: var(--test-black);">Grievances by Category</h2>
         <div id="chart2" class="chart1 textBlack p-3 " style="width: 31rem;"></div>
     </span>
-
 </div>

@@ -23,7 +23,6 @@
     --gray-dark:#e2ddddce;
     --background:#ebecff;
     --test-black:rgb(255, 255, 255);
-
 }
 html{
     font-size: .9rem;
@@ -34,7 +33,6 @@ html{
 .textSecondaryBlack{
     color: var(--gray-dark);
 }
-
 .bgGray{
     background-color: var(--gray);
 }
@@ -74,7 +72,6 @@ table tr,table td,table th{
     background-image: url(./assets/image\ \(2\).png);
     background-position: right 0;
     background-size: cover;
-    
 }
 
 .login-form input{
@@ -361,7 +358,19 @@ form{
   @media(max-width:800px){
     nav{
         position: absolute;
+    /* left: -20rem;
+    width: 17.5rem; */
     }
+    /* #hide{
+        display: block;
+    }
+    .hide-nav{
+        position: relative;
+        left: 0;
+    }
+    .none{
+        display: none;
+    } */
     .statics{
         width: 10rem;
     }
@@ -379,6 +388,7 @@ form{
         height: 100vh;
         padding: 0rem !important;
         margin: 0rem !important;
+        align-items: center;
     }
     .login-form .logo{
      margin: 0 !important;
@@ -417,8 +427,6 @@ form{
       font-size: 12px;
     }
   }
-
-
   
   .stepper-item::before {
     position: absolute;
@@ -446,9 +454,11 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     background: #ccc;
-    
+    margin-bottom: 6px;
   }
   
   .stepper-item.active {
@@ -456,13 +466,13 @@ form{
   }
   
   .stepper-item.completed .step-counter {
-    background-color: var(--primary)
+    background-color: #4bb543;
   }
   
   .stepper-item.completed::after {
     position: absolute;
     content: "";
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid #4bb543;
     width: 100%;
     top: 20px;
     left: 50%;
@@ -475,3 +485,9 @@ form{
   .stepper-item:last-child::after {
     content: none;
   }
+
+
+
+
+
+

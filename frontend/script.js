@@ -1,4 +1,4 @@
-const baseurl = "https://10.21.98.137:8888/CampusCare"
+const baseurl = "https://10.21.98.96:8888/CampusCare"
 const app = angular.module('myApp', ['ui.router'])
 mainCtrl = app.controller('mainCtrl', ['$state', 'api_request', '$timeout', function ($state, api_request, $timeout) {
     console.log("mainController")
@@ -27,12 +27,12 @@ mainCtrl = app.controller('mainCtrl', ['$state', 'api_request', '$timeout', func
         })
     }
     main.logout = function () {
+        cl=document.getElementById('cl').click()        
         api_request.http_request('GET', 'logout/', "", "", 'application/json', (data) => {
             console.log(data)
             $state.go('login')
         })
     }
-
     main.load_start = function () {
         document.querySelector('#preloader').style.display = 'block'
     }
@@ -78,11 +78,8 @@ mainCtrl = app.controller('mainCtrl', ['$state', 'api_request', '$timeout', func
     main.dnone = function (id) {
         d = document.getElementById(id)
         d.classList.toggle('d-none')
-    }
-    
-    
+    }  
 }])
-
 function displaySelectedImage(event, elementId) {
     const selectedImage = document.getElementById(elementId);
     const imgObj = event.target.files[0];
@@ -103,7 +100,7 @@ function displaySelectedImage(event, elementId) {
             timer: 3000
         });
     }
-    else if (!acceptedTypesLong.includes(imgObj.type)) {
+    else if(!acceptedTypesLong.includes(imgObj.type)) {
         console.log("err2")
         fileUploader.value = null;
         Swal.fire({
@@ -124,7 +121,6 @@ function displaySelectedImage(event, elementId) {
         }
     }
 }
-
 function visible(id, pass) {
     inp = document.getElementById(id)
     pass = document.getElementById(pass)

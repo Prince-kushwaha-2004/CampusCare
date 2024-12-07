@@ -1,14 +1,110 @@
-<div class="header p-5 d-flex justify-content-between">
+<div class="header p-5 d-flex justify-content-between animateUp">
     <div>
-        <h1 class="fw-bold textBlack">Hello, {{home.profileData.name}}</h1>
+        
+        <h1 class="fw-bold textBlack">Hello, {{home.profileData.name.charAt(0).toUpperCase() + home.profileData.name.slice(1)}}</h1>
         <p class="fs-4 textSecondaryBlack">Welcome to CampusCare!!</p>
     </div>
-    <div class="date flex-center gap-3">
-        <p class="fs-4 textBlack mb-0 pb-0">16 May, 2024</p>
+    <div class="date flex-center gap-3 d-none d-md-flex">
+        <p class="fs-4 textBlack mb-0 pb-0 ">{{home.date}}</p>
         <div class="bgGray iconcontainer">
             <i class="bi textBlack bi-calendar2-week fs-3"></i>
         </div>
     </div>
 </div>
 <hr>
-<h2 class="textBlack">student</h2>
+<br>
+<div class="cards d-flex gap-3 gap-md-5 justify-content-center flex-wrap animateUp" style="color: var(--test-black);">
+    <div class="statics">
+        <div class="fs-5 d-flex gap-4 ps-2 ">
+            <i class="bi bi-graph-up fs-3"></i>
+             <span class="d-flex flex-column">
+                <p>Total <br>Grievances</p>
+                <h2>{{student.stats.total}}</h2>
+            </span>
+        </div>
+
+    </div>
+    <div class="statics">
+        <div class="fs-5  d-flex gap-4 ps-2 ">
+            <i class="bi bi-shield-fill-check fs-3"></i>
+            <span class="d-flex flex-column">
+                <p>Resolved Grievances</p>
+                <h2>{{student.stats.closed}}</h2>
+            </span>
+        </div>
+    </div>
+    <div class="statics ">
+        <div class="fs-5 d-flex gap-4 ps-2 "> 
+            <i class="bi bi-hourglass-bottom fs-3"></i>
+            <span class="d-flex flex-column">
+                <p>Pending Grievances</p>
+                <h2>{{student.stats.pending}}</h2>
+            </span> 
+        </div>
+
+    </div>
+    <div class="statics">
+        <div class="fs-5 d-flex gap-4 ps-2 ">
+             <i class="bi bi-cloud-plus-fill fs-3"></i>
+             <span class="d-flex flex-column">
+                <p> New <br> Grievances</p>
+                <h2>{{student.stats.registered}}</h2>
+            </span>
+        </div>
+
+    </div>
+</div>
+<br>
+<hr>
+<h2 class="textBlack mt-5 mb-3" ng-show="student.review">Grievance for Review</h2>
+<div class="d-flex flex-column gap-3">
+    <div style="background-color: var(--white-bg-2);" class="faculty box-shadow" role="button"
+    ng-repeat="x in student.pendingGrievance" ng-show="x.active">
+    <div class="d-flex flex-column flex-md-row flex-wrap justify-content-between gap-4 rounded p-3 animateUp">
+        <div class="d-flex gap-4 ">
+            <div class="info m-auto" style="width: 16rem;">
+                <h3 class="m-0 p-1" style="color: var(--test-black);">{{x.title.charAt(0).toUpperCase() +
+                    x.title.slice(1)}}</h3>
+                <p class="m-0 p-1" style="color: var(--gray-dark);">{{x.date}}</p>
+            </div>
+        </div>
+        <div class="d-flex gap-3 col-12 col-md-5 justify-content-center align-item-center ">
+            <p class="m-auto" style="color: var(--gray-dark);">{{x.message}}</p>
+        </div>
+        <div class="d-flex justify-content-between p-2" style="color:var(--test-black);">
+
+            <div class="btns d-flex gap-3 mt-auto mb-auto">
+                <div class="btn btn-success" ng-click="student.close(x.id)">Close</div>
+                <button class="btn btn-danger" data-bs-toggle="modal" ng-click="student.reject(x.id)"
+                data-bs-target="#reject"><i class="bi bi-check2-circle"></i> Not Satisfied</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<div class="modal fade" id="reject" tabindex="-1" aria-labelledby="rejectLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: var(--white-bg-2); color: var(--test-black);">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="rejectLabel">Not Satisfied</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form ng-submit="student.rejectGrievance()">
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Reason:</label>
+                        <textarea class="form-control border" ng-model="student.rejectdata.message"
+                            id="message-text" required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            id="close">Close</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
